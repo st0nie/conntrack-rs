@@ -30,6 +30,7 @@ pub enum CtMessage {
 
 #[neli_enum(serialized_type = "u16")]
 pub enum CtNetlinkMessage {
+    ConntrackNew = subsys_message(CtNetlinkSubsys::CtNetlink, CtMessage::CtNew),
     Conntrack = subsys_message(CtNetlinkSubsys::CtNetlink, CtMessage::CtGet),
 }
 

@@ -20,6 +20,12 @@ pub enum Error {
     Serialization(#[from] neli::err::SerError),
 
     #[error(transparent)]
+    AttrTypeBuilder(#[from] neli::genl::AttrTypeBuilderError),
+
+    #[error(transparent)]
+    NlattrBuilder(#[from] neli::genl::NlattrBuilderError),
+
+    #[error(transparent)]
     Socket(#[from] neli::err::SocketError),
 
     #[error(transparent)]
